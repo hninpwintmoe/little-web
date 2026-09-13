@@ -1,0 +1,2022 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>for you ♡</title>
+
+<style>
+
+/* ================================
+   BASIC
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #050609;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+:root {
+    --blue: #a9d8ff;
+    --blue2: #75b9ed;
+    --white: #ffffff;
+    --grey: #a4a4a8;
+    --dark: #050609;
+}
+
+
+/* ================================
+   STAR BACKGROUND
+================================ */
+
+.space {
+    position: fixed;
+    inset: 0;
+    z-index: -10;
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(70,120,170,.12),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 20% 80%,
+            rgba(255,255,255,.05),
+            transparent 25%
+        ),
+        #050609;
+}
+
+.star {
+    position: fixed;
+    color: white;
+    pointer-events: none;
+    animation: starFloat linear infinite;
+}
+
+@keyframes starFloat {
+
+    0% {
+        transform: translateY(110vh);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: .7;
+    }
+
+    85% {
+        opacity: .7;
+    }
+
+    100% {
+        transform: translateY(-10vh);
+        opacity: 0;
+    }
+}
+
+
+/* ================================
+   NAVIGATION
+================================ */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    padding: 18px 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 1000;
+
+    background: rgba(5,6,9,.55);
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(255,255,255,.05);
+}
+
+.logo {
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.logo span {
+    color: var(--blue);
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #888;
+    font-size: 11px;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: white;
+}
+
+
+/* ================================
+   MUSIC
+================================ */
+
+.music-button {
+    position: fixed;
+
+    right: 22px;
+    bottom: 22px;
+
+    width: 52px;
+    height: 52px;
+
+    border-radius: 50%;
+
+    border: 1px solid #444;
+
+    background: rgba(10,10,12,.8);
+
+    color: white;
+
+    cursor: pointer;
+
+    z-index: 1000;
+
+    transition: .3s;
+}
+
+.music-button:hover {
+    border-color: var(--blue);
+    transform: scale(1.08);
+}
+
+.music-button.playing {
+    border-color: var(--blue);
+    color: var(--blue);
+
+    box-shadow:
+        0 0 20px rgba(169,216,255,.2);
+}
+
+
+/* ================================
+   HERO
+================================ */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    position: relative;
+
+    padding: 100px 25px;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.mini {
+    color: var(--blue);
+
+    font-size: 10px;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 28px;
+}
+
+.hero h1 {
+    font-size: clamp(60px, 12vw, 130px);
+
+    line-height: .85;
+
+    letter-spacing: -6px;
+
+    font-weight: 800;
+}
+
+.hero h1 span {
+    color: var(--blue);
+}
+
+.hero p {
+    color: #85858a;
+
+    max-width: 500px;
+
+    margin: 35px auto;
+
+    line-height: 1.8;
+
+    font-size: 15px;
+}
+
+.begin {
+    display: inline-block;
+
+    padding: 14px 28px;
+
+    border: 1px solid #444;
+
+    border-radius: 50px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    transition: .4s;
+}
+
+.begin:hover {
+    background: white;
+    color: black;
+    transform: translateY(-3px);
+}
+
+
+/* ================================
+   MOON
+================================ */
+
+.moon {
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    border-radius: 50%;
+
+    background: #f8f8f8;
+
+    top: 17%;
+    right: 12%;
+
+    box-shadow:
+        0 0 40px rgba(255,255,255,.18);
+
+    animation: moonMove 5s ease-in-out infinite;
+}
+
+@keyframes moonMove {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+
+/* ================================
+   GENERAL SECTIONS
+================================ */
+
+section {
+    padding: 130px 25px;
+}
+
+.container {
+    max-width: 1050px;
+    margin: auto;
+}
+
+.label {
+    color: var(--blue);
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: clamp(45px, 8vw, 85px);
+
+    line-height: .95;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 30px;
+}
+
+.text {
+    color: #999;
+
+    max-width: 620px;
+
+    line-height: 1.9;
+
+    font-size: 16px;
+}
+
+
+/* ================================
+   PHOTO SECTION
+================================ */
+
+.photo-section {
+    margin-top: 55px;
+
+    display: flex;
+
+    justify-content: center;
+}
+
+.photo-frame {
+    width: min(700px, 100%);
+
+    padding: 12px;
+
+    background: #111216;
+
+    border: 1px solid #292a2e;
+
+    box-shadow:
+        0 25px 80px rgba(0,0,0,.5);
+
+    transform: rotate(-1deg);
+
+    transition: .5s;
+}
+
+.photo-frame:hover {
+    transform: rotate(0deg) scale(1.015);
+}
+
+.photo-frame img {
+    display: block;
+
+    width: 100%;
+
+    max-height: 650px;
+
+    object-fit: cover;
+}
+
+.photo-placeholder {
+    min-height: 450px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    color: #555;
+
+    font-size: 13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0e0f12,
+            #17191d
+        );
+}
+
+.photo-caption {
+    padding: 15px 5px 5px;
+
+    color: #777;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+}
+
+
+/* ================================
+   CONSTELLATION
+================================ */
+
+.constellation {
+    margin: 100px auto 0;
+
+    max-width: 700px;
+
+    height: 300px;
+
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(100,150,200,.07),
+            transparent 60%
+        );
+}
+
+.constellation .point {
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 8px rgba(255,255,255,.7);
+}
+
+.constellation .line {
+    position: absolute;
+
+    height: 1px;
+
+    background: rgba(169,216,255,.35);
+
+    transform-origin: left center;
+}
+
+.p1 { left: 15%; top: 55%; }
+.p2 { left: 30%; top: 25%; }
+.p3 { left: 48%; top: 50%; }
+.p4 { left: 65%; top: 20%; }
+.p5 { left: 82%; top: 60%; }
+
+.l1 {
+    width: 170px;
+    left: 16%;
+    top: 54%;
+    transform: rotate(-27deg);
+}
+
+.l2 {
+    width: 190px;
+    left: 30%;
+    top: 26%;
+    transform: rotate(23deg);
+}
+
+.l3 {
+    width: 180px;
+    left: 48%;
+    top: 49%;
+    transform: rotate(-31deg);
+}
+
+.l4 {
+    width: 210px;
+    left: 65%;
+    top: 21%;
+    transform: rotate(27deg);
+}
+
+.constellation-name {
+    position: absolute;
+
+    bottom: 10px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: #555;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+}
+
+
+/* ================================
+   MEMORIES
+================================ */
+
+.memories {
+    margin-top: 60px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+.memory {
+    min-height: 300px;
+
+    padding: 28px;
+
+    border: 1px solid #22242a;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0c0d10,
+            #090a0d
+        );
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition: .4s;
+}
+
+.memory:hover {
+    border-color: #4c718f;
+
+    transform: translateY(-8px);
+}
+
+.memory-number {
+    color: #555;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+.memory h3 {
+    margin-top: 90px;
+
+    font-size: 22px;
+
+    font-weight: normal;
+}
+
+.memory p {
+    color: #777;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    margin-top: 12px;
+}
+
+.memory-star {
+    position: absolute;
+
+    right: 22px;
+    top: 20px;
+
+    color: #333;
+
+    font-size: 28px;
+}
+
+
+/* ================================
+   ENVELOPE
+================================ */
+
+.envelope-area {
+    margin-top: 70px;
+
+    display: flex;
+
+    justify-content: center;
+
+    min-height: 450px;
+}
+
+.envelope {
+    width: 340px;
+    height: 230px;
+
+    position: relative;
+
+    cursor: pointer;
+
+    margin-top: 80px;
+}
+
+
+/* envelope body */
+
+.envelope-back {
+    position: absolute;
+
+    inset: 0;
+
+    background: #f2f2f2;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.4);
+}
+
+
+/* letter */
+
+.letter {
+    position: absolute;
+
+    left: 20px;
+
+    top: 15px;
+
+    width: 300px;
+
+    min-height: 190px;
+
+    padding: 28px;
+
+    background: #101114;
+
+    border: 1px solid #333;
+
+    color: white;
+
+    z-index: 2;
+
+    transition:
+        transform .8s ease,
+        z-index .1s;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.4);
+}
+
+.letter h3 {
+    color: var(--blue);
+
+    font-size: 20px;
+
+    margin-bottom: 15px;
+}
+
+.letter p {
+    color: #aaa;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+
+/* front */
+
+.envelope-front {
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 0;
+    height: 0;
+
+    border-left:
+        170px solid transparent;
+
+    border-right:
+        170px solid transparent;
+
+    border-bottom:
+        125px solid #d5d5d5;
+
+    z-index: 4;
+}
+
+
+/* flap */
+
+.envelope-flap {
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 0;
+    height: 0;
+
+    border-left:
+        170px solid transparent;
+
+    border-right:
+        170px solid transparent;
+
+    border-top:
+        125px solid #bcbcbc;
+
+    transform-origin: top center;
+
+    transition:
+        transform .8s ease;
+
+    z-index: 5;
+}
+
+
+/* OPEN STATE */
+
+.envelope.open .envelope-flap {
+    transform: rotateX(180deg);
+
+    z-index: 1;
+}
+
+.envelope.open .letter {
+    transform: translateY(-145px);
+
+    z-index: 6;
+}
+
+
+/* ================================
+   QUOTE
+================================ */
+
+.quote {
+    text-align: center;
+
+    padding: 100px 20px;
+}
+
+.quote-symbol {
+    color: var(--blue);
+
+    font-size: 60px;
+
+    margin-bottom: 20px;
+}
+
+.quote-text {
+    font-size: clamp(30px, 6vw, 60px);
+
+    line-height: 1.15;
+
+    letter-spacing: -2px;
+
+    max-width: 800px;
+
+    margin: auto;
+}
+
+.quote-text span {
+    color: var(--blue);
+}
+
+.quote-small {
+    color: #666;
+
+    margin-top: 30px;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+}
+
+
+/* ================================
+   RANDOM MESSAGE
+================================ */
+
+.message-area {
+    text-align: center;
+
+    margin-top: 60px;
+}
+
+.message-button {
+    padding: 15px 27px;
+
+    background: transparent;
+
+    color: white;
+
+    border: 1px solid #444;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.message-button:hover {
+    border-color: var(--blue);
+
+    color: var(--blue);
+}
+
+.random-message {
+    margin: 35px auto 0;
+
+    min-height: 40px;
+
+    max-width: 550px;
+
+    color: var(--blue);
+
+    font-size: 20px;
+
+    opacity: 0;
+
+    transition: .5s;
+}
+
+.random-message.show {
+    opacity: 1;
+}
+
+
+/* ================================
+   FINAL
+================================ */
+
+.final {
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    position: relative;
+}
+
+.final-content {
+    max-width: 850px;
+}
+
+.final .label {
+    margin-bottom: 30px;
+}
+
+.final h2 {
+    font-size: clamp(55px, 11vw, 120px);
+
+    line-height: .85;
+
+    letter-spacing: -6px;
+}
+
+.final h2 span {
+    color: var(--blue);
+}
+
+.final p {
+    max-width: 550px;
+
+    margin: 40px auto;
+
+    color: #888;
+
+    line-height: 1.9;
+}
+
+.final-button {
+    padding: 15px 30px;
+
+    background: white;
+
+    color: black;
+
+    border: none;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.final-button:hover {
+    transform: scale(1.08);
+}
+
+
+/* ================================
+   POPUP
+================================ */
+
+.popup {
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(0,0,0,.8);
+
+    backdrop-filter: blur(10px);
+
+    display: none;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 25px;
+
+    z-index: 5000;
+}
+
+.popup.show {
+    display: flex;
+}
+
+.popup-box {
+    background: #111216;
+
+    border: 1px solid #303238;
+
+    padding: 50px 35px;
+
+    max-width: 500px;
+
+    width: 100%;
+
+    text-align: center;
+
+    animation: popup .5s ease;
+}
+
+@keyframes popup {
+
+    from {
+        opacity: 0;
+        transform: scale(.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.popup-box h3 {
+    color: var(--blue);
+
+    font-size: 35px;
+
+    margin-bottom: 20px;
+}
+
+.popup-box p {
+    color: #aaa;
+
+    line-height: 1.8;
+}
+
+.close {
+    margin-top: 30px;
+
+    background: white;
+
+    color: black;
+
+    border: none;
+
+    padding: 12px 25px;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+}
+
+
+/* ================================
+   SCROLL ANIMATION
+================================ */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(35px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+    text-align: center;
+
+    padding: 50px 20px;
+
+    color: #444;
+
+    font-size: 11px;
+}
+
+footer span {
+    color: var(--blue);
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 700px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .moon {
+        width: 65px;
+        height: 65px;
+
+        top: 14%;
+        right: 8%;
+    }
+
+    .hero h1 {
+        letter-spacing: -4px;
+    }
+
+    .memories {
+        grid-template-columns: 1fr;
+    }
+
+    .memory {
+        min-height: 250px;
+    }
+
+    .memory h3 {
+        margin-top: 60px;
+    }
+
+    .photo-placeholder {
+        min-height: 300px;
+    }
+
+    .envelope {
+        transform: scale(.85);
+    }
+
+    .constellation {
+        height: 230px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ================================
+     BACKGROUND
+================================ -->
+
+<div class="space"></div>
+
+
+<!-- ================================
+     NAV
+================================ -->
+
+<nav>
+
+    <div class="logo">
+        for <span>you</span>
+    </div>
+
+    <div class="nav-links">
+
+        <a href="#beginning">01</a>
+
+        <a href="#memories">02</a>
+
+        <a href="#letter">03</a>
+
+        <a href="#final">♡</a>
+
+    </div>
+
+</nav>
+
+
+<!-- ================================
+     MUSIC
+================================ -->
+
+<audio id="music" loop>
+
+    <source src="media/75-Com9Bo_s-fd1b9d48d8bfa297b367c6901a33227b203 (1).mp3" type="audio/mpeg">
+
+</audio>
+
+<button
+    class="music-button"
+    id="musicButton"
+>
+    ♪
+</button>
+
+
+<!-- ================================
+     HERO
+================================ -->
+
+<section class="hero">
+
+    <div class="moon"></div>
+
+    <div class="hero-content">
+
+        <div class="mini">
+             something i made
+        </div>
+
+        <h1>
+            for<br>
+            <span>you!</span>
+        </h1>
+
+        <p>
+
+            This isn't really a special website.
+
+            I just wanted to make you somethinggg.
+
+        </p>
+
+        <a
+            href="#beginning"
+            class="begin"
+        >
+            look around ↓
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================================
+     PHOTO / BEGINNING
+================================ -->
+
+<section id="beginning">
+
+    <div class="container">
+
+        <div class="reveal">
+
+            <div class="label">
+                01 — ONE OF MY FAVOURITE THINGS
+            </div>
+
+            <h2 class="title">
+                This photo.
+            </h2>
+
+            <p class="text">
+
+                I'll let the photo speak for itself.
+
+            </p>
+
+        </div>
+
+
+        <div class="photo-section reveal">
+
+            <div class="photo-frame">
+
+                <!--
+                PUT YOUR PHOTO HERE
+
+                Rename your photo to:
+                photo1.jpg
+
+                Put it inside:
+                media/photo1.jpg
+                -->
+
+                <img
+                    src="media/photo1.jpg"
+                    alt="our photo"
+                    onerror="this.style.display='none';"
+                >
+
+                <!-- <div class="photo-placeholder">
+
+                     A very first pic of uss ♡<br><br>
+
+                     and... a little cheek kiss👀<br>
+                    
+
+                </div> -->
+
+                <div class="photo-caption">
+
+                   A very first pic of uss and.. a little cheek kiss👀♡
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CONSTELLATION -->
+
+        <div class="constellation reveal">
+
+            <div class="point p1"></div>
+            <div class="point p2"></div>
+            <div class="point p3"></div>
+            <div class="point p4"></div>
+            <div class="point p5"></div>
+
+            <div class="line l1"></div>
+            <div class="line l2"></div>
+            <div class="line l3"></div>
+            <div class="line l4"></div>
+
+            <!-- <div class="constellation-name">
+                a little constellation
+            </div> -->
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================================
+     MEMORIES
+================================ -->
+
+<section id="memories">
+
+    <div class="container">
+
+        <div class="reveal">
+
+            <div class="label">
+                02 — LITTLE THINGS
+            </div>
+
+            <h2 class="title">
+                a few<br>
+                memories.
+            </h2>
+
+            <p class="text">
+
+                Nothing too serious.
+                Just some moments I want
+                to keep here.
+
+            </p>
+
+        </div>
+
+
+        <div class="memories">
+
+
+            <div class="memory reveal">
+
+                <div class="memory-number">
+                    01
+                </div>
+
+                <div class="memory-star">
+                    ✦
+                </div>
+
+                <h3>
+                    the beginning
+                </h3>
+
+                <p>
+
+                    The first time I noticed you.. <br>
+
+                     I still remember the day I first saw you at tuition. The second I saw you, I literally wanted to be friends with you 😭 I just never thought we’d end up getting this close or making so many memories together. It’s actually crazy thinking about how we went from basically strangers to being this close now.  
+
+                </p>
+
+            </div>
+
+
+            <div class="memory reveal">
+
+                <div class="memory-number">
+                    02
+                </div>
+
+                <div class="memory-star">
+                    ✧
+                </div>
+
+                <h3>
+                    random conversations
+                </h3>
+
+                <p>
+
+                    It all started with books, random topics, and the 
+                    most random convos ever😭 
+                    Never thought those little conversations would turn into all 
+                    these memories tbh
+
+                </p>
+
+            </div>
+
+
+            <div class="memory reveal">
+
+                <div class="memory-number">
+                    03
+                </div>
+
+                <div class="memory-star">
+                    ⋆
+                </div>
+
+                <h3>
+                    finally knowing
+                </h3>
+
+                <p>
+
+                    The part where we finally
+                    knew that the feeling
+                    wasn't only coming from one side.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================================
+     ENVELOPE
+================================ -->
+
+<section id="letter">
+
+    <div class="container">
+
+        <div class="reveal">
+
+            <div class="label">
+                03 — OPEN THIS
+            </div>
+
+            <h2 class="title">
+                there's a note<br>
+                for you.
+            </h2>
+
+        </div>
+
+
+        <div class="envelope-area reveal">
+
+            <div
+                class="envelope"
+                id="envelope"
+            >
+
+                <div class="envelope-back"></div>
+
+
+                <div class="letter">
+
+                    <h3>
+                        hey :)
+                    </h3>
+
+                    <p>
+
+                        အမတို့တစ်ယောက်နဲ့တစ်ယောက်သိလာတာ ခုဆို၁နှစ်နီးပါးတောင်ရှိတော့မယ်နော်
+                         အိမ့်မှူးနဲ့ခင်လာရတဲ့တစ်လျှောက်လုံးအမအများကြီးပျော်ခဲ့ရပါတယ်ရှင့်🤍
+                         သင်တန်းမှာစတွေ့ကတည်းကသတိထားမိခဲ့တယ်ဆိုပေမဲ့ခုတော့ပိုသေချာသွားးပြီ။
+                         အမအိမ့်မှူးကိုချစ်တယ်နော်။နောက်လဲအများကြီးးဆက်ချစ်သွားပါမယ်ရှင့်🤍🤍
+
+                        <br><br>
+
+                         
+
+                    </p>
+
+                </div>
+
+
+                <div class="envelope-flap"></div>
+
+                <div class="envelope-front"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================================
+     QUOTE
+================================ -->
+
+<section>
+
+    <div class="container quote reveal">
+
+        <div class="quote-symbol">
+            ✦
+        </div>
+
+        <div class="quote-text">
+
+            I Love You<br>
+            more than <span>Yesderday</span><br>
+            less than <span>Tomorrow</span>
+
+        </div>
+
+        <div class="quote-small">
+
+            love u my Baby Pisi lyy
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================================
+     RANDOM MESSAGES
+================================ -->
+
+<section>
+
+    <div class="container">
+
+        <div class="reveal">
+
+            <div class="label">
+                04 — JUST BECAUSE
+            </div>
+
+            <h2 class="title">
+                click it.
+            </h2>
+
+            <p class="text">
+
+                There are a few things
+                hidden here.👀
+
+            </p>
+
+        </div>
+
+
+        <div class="message-area reveal">
+
+            <button
+                class="message-button"
+                id="messageButton"
+            >
+                show me one
+            </button>
+
+
+            <div
+                class="random-message"
+                id="randomMessage"
+            ></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================================
+     FINAL
+================================ -->
+
+<section class="final" id="final">
+
+    <div class="final-content reveal">
+
+        <div class="label">
+            05 — THE END
+        </div>
+
+        <h2>
+
+            see you<br>
+            <span>under the stars.</span>
+
+        </h2>
+
+        <p>
+
+            That's all.
+
+            <br><br>
+
+            I just wanted to make you
+            a little gift.I know this this not very special but I tried my Best❤️
+
+        </p>
+
+
+        <button
+            class="final-button"
+            id="surpriseButton"
+        >
+
+            one last thing ♡
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================================
+     POPUP
+================================ -->
+
+<div
+    class="popup"
+    id="popup"
+>
+
+    <div class="popup-box">
+
+        <h3>
+            ✦
+        </h3>
+
+        <p>
+
+            I'm really glad
+            our paths crossed.
+
+            <br><br>
+
+            I'm glad you're here.🤍
+
+        </p>
+
+
+        <button
+            class="close"
+            id="closePopup"
+        >
+
+            okay ♡
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    made under a sky full of stars <span>✦</span>
+
+</footer>
+
+
+<script>
+
+
+/* ================================
+   CREATE STARS
+================================ */
+
+function createStars() {
+
+    for (let i = 0; i < 55; i++) {
+
+        const star =
+            document.createElement("div");
+
+        star.className = "star";
+
+        const symbols =
+            ["·", "✦", "✧", "⋆"];
+
+        star.innerHTML =
+            symbols[
+                Math.floor(
+                    Math.random() *
+                    symbols.length
+                )
+            ];
+
+        star.style.left =
+            Math.random() * 100 + "%";
+
+        star.style.fontSize =
+            (Math.random() * 8 + 5) + "px";
+
+        star.style.animationDuration =
+            (Math.random() * 18 + 12) + "s";
+
+        star.style.animationDelay =
+            "-" + Math.random() * 20 + "s";
+
+        document.body.appendChild(star);
+
+    }
+
+}
+
+createStars();
+
+
+/* ================================
+   MUSIC
+================================ */
+
+const music =
+    document.getElementById("music");
+
+const musicButton =
+    document.getElementById("musicButton");
+
+let playing = false;
+
+
+musicButton.addEventListener(
+    "click",
+    function() {
+
+        if (!playing) {
+
+            music.play()
+            .then(function() {
+
+                playing = true;
+
+                musicButton.innerHTML = "♫";
+
+                musicButton.classList.add(
+                    "playing"
+                );
+
+            })
+            .catch(function() {
+
+                alert(
+                    "Put your music file inside the media folder and name it music.mp3"
+                );
+
+            });
+
+        } else {
+
+            music.pause();
+
+            playing = false;
+
+            musicButton.innerHTML = "♪";
+
+            musicButton.classList.remove(
+                "playing"
+            );
+
+        }
+
+    }
+);
+
+
+/* ================================
+   ENVELOPE
+================================ */
+
+const envelope =
+    document.getElementById("envelope");
+
+envelope.addEventListener(
+    "click",
+    function() {
+
+        envelope.classList.toggle("open");
+
+    }
+);
+
+
+/* ================================
+   SCROLL REVEAL
+================================ */
+
+const reveals =
+    document.querySelectorAll(".reveal");
+
+
+const observer =
+    new IntersectionObserver(
+        function(entries) {
+
+            entries.forEach(
+                function(entry) {
+
+                    if (
+                        entry.isIntersecting
+                    ) {
+
+                        entry.target.classList.add(
+                            "visible"
+                        );
+
+                    }
+
+                }
+            );
+
+        },
+        {
+            threshold: 0.15
+        }
+    );
+
+
+reveals.forEach(
+    function(element) {
+
+        observer.observe(element);
+
+    }
+);
+
+
+/* ================================
+   RANDOM MESSAGES
+================================ */
+
+const messages = [
+
+    "I'm glad I met you. ♡",
+
+    "You are one of my favourite people.",
+
+    "I still remember the beginning.",
+
+    "Somehow, all those little conversations mattered.",
+
+    "Maybe the timing was just right.",
+
+    "I'm glad it wasn't one-sided. 🩵",
+
+    "You deserve a little corner of the internet.",
+
+    "And yes, I remembered that you like stars. ✦",
+
+    "Plumeria’s love language: Could I be the last love of your life? or How lucky I am to have met you. ",
+
+    "I hope this made you smile.",
+
+    "Okay, that's enough embarrassing messages for now :)"
+
+];
+
+
+const messageButton =
+    document.getElementById(
+        "messageButton"
+    );
+
+const randomMessage =
+    document.getElementById(
+        "randomMessage"
+    );
+
+
+messageButton.addEventListener(
+    "click",
+    function() {
+
+        const index =
+            Math.floor(
+                Math.random() *
+                messages.length
+            );
+
+
+        randomMessage.classList.remove(
+            "show"
+        );
+
+
+        setTimeout(
+            function() {
+
+                randomMessage.innerHTML =
+                    messages[index];
+
+                randomMessage.classList.add(
+                    "show"
+                );
+
+            },
+            200
+        );
+
+    }
+);
+
+
+/* ================================
+   FINAL POPUP
+================================ */
+
+const surpriseButton =
+    document.getElementById(
+        "surpriseButton"
+    );
+
+const popup =
+    document.getElementById("popup");
+
+const closePopup =
+    document.getElementById("closePopup");
+
+
+surpriseButton.addEventListener(
+    "click",
+    function() {
+
+        popup.classList.add("show");
+
+    }
+);
+
+
+closePopup.addEventListener(
+    "click",
+    function() {
+
+        popup.classList.remove("show");
+
+    }
+);
+
+
+popup.addEventListener(
+    "click",
+    function(event) {
+
+        if (
+            event.target === popup
+        ) {
+
+            popup.classList.remove(
+                "show"
+            );
+
+        }
+
+    }
+);
+
+
+/* ================================
+   CURSOR LIGHT
+================================ */
+
+document.addEventListener(
+    "mousemove",
+    function(event) {
+
+        const light =
+            document.createElement("div");
+
+        light.style.position = "fixed";
+
+        light.style.left =
+            event.clientX + "px";
+
+        light.style.top =
+            event.clientY + "px";
+
+        light.style.width = "3px";
+
+        light.style.height = "3px";
+
+        light.style.background =
+            "#a9d8ff";
+
+        light.style.borderRadius =
+            "50%";
+
+        light.style.pointerEvents =
+            "none";
+
+        light.style.zIndex = "999";
+
+        light.style.transition =
+            "all .6s ease";
+
+        document.body.appendChild(light);
+
+
+        setTimeout(
+            function() {
+
+                light.style.transform =
+                    "scale(0)";
+
+                light.style.opacity =
+                    "0";
+
+            },
+            50
+        );
+
+
+        setTimeout(
+            function() {
+
+                light.remove();
+
+            },
+            700
+        );
+
+    }
+);
+
+</script>
+
+</body>
+</html>
+```
